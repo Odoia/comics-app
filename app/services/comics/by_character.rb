@@ -17,11 +17,10 @@ module Comics
       comic_presenter(result)
     end
 
+    private
 
     def characters_id_by(character)
-      result = self.class.get('/characters', { query: auth.merge(name: character) })
-
-      result['data']['results']&.first['id']
+      ::Character::ByName.new(character: character).call
     end
 
     def comic_presenter(comics)
