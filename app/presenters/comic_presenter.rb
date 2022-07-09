@@ -6,7 +6,7 @@ class ComicPresenter
     @title        = attrs['title']
     @on_sale_date = attrs['dates']&.first['date'].to_date
     @image_url    = "#{attrs['thumbnail']['path']}.#{attrs['thumbnail']['extension']}"
-    @favorite     = attrs['favorite'] || false #todo: implements a function to pick this on Db
+    @favorite     = attrs['favorite'] || false # TODO: implements a function to pick this on Db
     @character    = attrs['Character']
   end
 end
