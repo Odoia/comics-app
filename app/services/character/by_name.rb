@@ -7,8 +7,11 @@ module Character
     end
 
     def call
-      result = self.class.get('/characters', query_params)
-      result['data']['results']&.first['id']
+      response = self.class.get('/characters', query_params)
+
+      return nil if response['data']['results'].blank?
+
+      response['data']['results'].first['id']
     end
 
     private
