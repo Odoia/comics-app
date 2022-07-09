@@ -7,6 +7,6 @@ class ComicsController < ApplicationController
   private
 
   def all_comics
-    ::Comics::All.new.call
+    @all_comics ||= ::Comics::All.new.call
   end
 end
