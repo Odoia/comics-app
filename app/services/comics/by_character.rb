@@ -1,40 +1,21 @@
 module Comics
-  class ByCharacter
-    include HTTParty
-    base_uri 'https://gateway.marvel.com/v1/public'
-
-    attr_accessor :character
+  class ByCharacter < All
 
     def initialize(character:)
+      super()
       @character = character
-    end
-
-    def call
-      result = self.class.get('/comics', { query: auth.merge(characters: characters_id_by(character)) } )
-
-      return result unless result['code'] == 200
-
-      comic_presenter(result)
     end
 
     private
 
-    def characters_id_by(character)
-      ::Character::ByName.new(character: character).call
+    attr_reader :character
+
+    def query_params
+      { query: auth.merge(characters: character_id, orderBy: '-onsaleDate') }
     end
 
-    def comic_presenter(comics)
-      comics['data']['results'].map do |comic|
-        ::ComicPresenter.new(comic)
-      end
-    end
-
-    def auth
-      {
-        ts: 123456789,
-        apikey:'',
-        hash: '21e2ae44ac88eedd70cb194384a265d7'
-      }
+    def character_id
+      @character_id ||= ::Character::ByName.new(character: character).call
     end
   end
 end

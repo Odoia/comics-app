@@ -1,7 +1,7 @@
 class ComicsController < ApplicationController
 
   def index
-    all_comics
+    @comics = all_comics
   end
 
   private
