@@ -1,0 +1,20 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Comics</h1>
+
+<div id="comics">
+  <% @comics.each do |comic| %>
+    <%= image_tag comic.image_url %>
+    <p>
+      <%= comic.id %>
+    </p>
+    <p>
+      <%= comic.title %>
+    </p>
+    <p>
+      <%= comic.favorite %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New comic", new_comic_path %>
