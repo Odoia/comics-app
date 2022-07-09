@@ -1,0 +1,40 @@
+html {
+  background-color: #2a2a2a;
+  overflow-y: scroll;
+}
+
+.header {
+  width: 100%;
+  height: 100px;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: rgb(255,0,0);
+  display: block;
+  position: fixed;
+}
+
+.header-logo {
+    display: block;
+    padding-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width:8%;
+}
+.header-search {
+    color: #2a2a2a;
+    display: block;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size:12px;
+    font-style:italic;
+    height: 25px;
+    width: 215px;
+}
+
+.content {
+  left: 0;
+  right: 0;
+  padding: 100px;
+}

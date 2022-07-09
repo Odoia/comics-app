@@ -1,20 +1,25 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Comics</h1>
-
-<div id="comics">
-  <% @comics.each do |comic| %>
-    <%= image_tag comic.image_url %>
-    <p>
-      <%= comic.id %>
-    </p>
-    <p>
-      <%= comic.title %>
-    </p>
-    <p>
-      <%= comic.favorite %>
-    </p>
-  <% end %>
+<!-- <h1>Comics</h1> -->
+<!--  -->
+<!-- <div id="comics"> -->
+<!--   <% @comics.each do |comic| %> -->
+<!--     <%= image_tag comic.image_url %> -->
+<!--     <p> -->
+<!--       <%= comic.id %> -->
+<!--     </p> -->
+<!--     <p> -->
+<!--       <%= comic.title %> -->
+<!--     </p> -->
+<!--     <p> -->
+<!--       <%= comic.favorite %> -->
+<!--     </p> -->
+<!--   <% end %> -->
+<!-- </div> -->
+<%= stylesheet_link_tag('index') %>
+<div class="header">
+  <%= image_tag('marvel_logo', class: "header-logo") %>
+  <form action="/search" method="get" accept-charset="UTF-8" class="header-search" >
+    <input id="query" name="query" type="text" />
+    <input name="commit" type="submit" value="Search" data-disable-with="Search" />
+  </form>
 </div>
-
-<%= link_to "New comic", new_comic_path %>
+<div class="content">dunha</div>
