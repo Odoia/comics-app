@@ -9,10 +9,15 @@ describe ::Comics::All  do
       end
 
       it 'should be return status 200' do
-        response = subject.call
+        result = subject.call
 
-        result= response['data']['results'].first
-        expect(result['id']).to be_kind_of Integer
+        expect(result.first.id).to be_kind_of Integer
+        expect(result.first.title).to be_kind_of String
+        expect(result.first.image_url).to be_kind_of String
+        expect(result.first.on_sale_date).to be_kind_of Date
+        expect(result.first.id).to eq 82967
+        expect(result.first.title).to eq 'Marvel Previews (2017)'
+        expect(result.first.image_url).to eq 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg'
       end
     end
   end

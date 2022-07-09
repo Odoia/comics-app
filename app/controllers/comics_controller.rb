@@ -9,5 +9,4 @@ class ComicsController < ApplicationController
   def all_comics
     ::Comics::All.new.call
   end
-
 end

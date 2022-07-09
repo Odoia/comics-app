@@ -6,9 +6,19 @@ module Comics
     def call
       @options = { query: auth }
       result = self.class.get('/comics', @options)
-      result
+
+      return result unless result['code'] == 200
+
+      comic_presenter(result)
     end
 
+    private
+
+    def comic_presenter(comics)
+      comics['data']['results'].map do |comic|
+        ::ComicPresenter.new(comic)
+      end
+    end
 
     def auth
       {
