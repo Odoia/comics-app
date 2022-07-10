@@ -6,7 +6,7 @@ class ComicsController < ApplicationController
 
   def search
     if comic_params.blank?
-      @comics = all_comics
+      @comics = index
       return render 'index'
     end
 
