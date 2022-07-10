@@ -29,6 +29,9 @@ The project will be running at: http://localhost:3000/comics
 
 [API mind map](https://www.xmind.net/m/T6qu3a)
 
+
+* ![project mid map](https://github.com/Odoia/comics-app/blob/development/public/comics-app.png)
+
 # How it works
 
 This application uses Marvel API (https://developer.marvel.com/docs).
