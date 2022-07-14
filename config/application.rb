@@ -18,5 +18,6 @@ module ComicsApp
     #
     # config.time_zone = "Central Time (US & Canada)"
     config.eager_load_paths << Rails.root.join('lib')
+Rails.application.config.assets.precompile += %w( jquery.min.js jquery_ujs.js )
   end
 end

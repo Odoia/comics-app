@@ -13,6 +13,11 @@ class ComicsController < ApplicationController
     @comics = all_by_name
   end
 
+  def set_favorite
+    # require 'pry'; binding.pry
+    
+  end
+
   private
 
   def comic_params

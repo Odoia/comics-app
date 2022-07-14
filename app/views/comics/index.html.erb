@@ -10,14 +10,15 @@
   <div class="content-grid">
     <% @comics.each do |comic| %>
       <div class="content-grid-item">
-
         <%= image_tag(comic.image_url, class: 'content-grid-item-image') %>
-        <% if comic.favorite %>
-          <%= image_tag('heart_on', class: "content-grid-item-favorite") %>  
-        <%else%>
-          <%= image_tag('heart_off', class: "content-grid-item-favorite") %>  
-        <%end%>
-          <div class="content-grid-item-info">
+        <span id="<%= comic.id %>" class="js-span" >
+          <% if comic.favorite %>
+            <%= image_tag('heart_on', id:"image-#{comic.id}", class: "content-grid-item-favorite", data: { favorite: comic.favorite } ) %>  
+          <%else%>
+            <%= image_tag('heart_off', id:"image-#{comic.id}", class: "content-grid-item-favorite", data: { favorite: comic.favorite } ) %>  
+          <%end%>
+        </span>
+        <div class="content-grid-item-info">
           <div class="content-grid-item-text">
             <%= comic.title %>
           </div>
@@ -29,3 +30,5 @@
     <% end %>
   </div>
 </div>
+
+
