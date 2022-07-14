@@ -1,3 +1,0 @@
-function updateFavorite() {
-  alert('foiiiiiii')
-}

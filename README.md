@@ -21,11 +21,13 @@ It will open a login page and you need to fill with:
 # Installation guide without Docker:
 
 * Clone the project;
+* Have Yarn installed (npm install yarn);
 * Insert valid PRIVATE_KEY and PUBLIC_KEY at .env file;
 * Run "bundle install";
 * Run "rails db:create";
 * Run "rails db:migrate";
 * Run "rails db:seed";
+* Run "yarn add jquery";
 * Run "rspec -fd" to run the all tests;
 * Run "rails server" to run the project.
 
