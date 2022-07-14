@@ -1,6 +1,6 @@
 # Marvel App
 
-This project is a web page that shows Marvel's comics from the latest released to the older ones. It is also possible to search by characters from the comics.
+This project is a web page that shows Marvel's comics from the latest released to the older ones. It is also possible to search by characters from the comics and favorite a comic.
 
 It uses Ruby 3.1.0 and Rails 7.0.3.
 
@@ -13,17 +13,26 @@ It uses Ruby 3.1.0 and Rails 7.0.3.
 * Run "dktest" to run the all tests;
 * Run "dkupa" to run the project.
 
-The project will be running at: http://localhost:3000/comics
+The project will be running at: http://localhost:3000.
+It will open a login page and you need to fill with: 
+* login: user01
+* password: pass01
 
 # Installation guide without Docker:
 
 * Clone the project;
 * Insert valid PRIVATE_KEY and PUBLIC_KEY at .env file;
 * Run "bundle install";
+* Run "rails db:create";
+* Run "rails db:migrate";
+* Run "rails db:seed";
 * Run "rspec -fd" to run the all tests;
 * Run "rails server" to run the project.
 
-The project will be running at: http://localhost:3000/comics
+The project will be running at: http://localhost:3000
+It will open a login page and you need to fill with: 
+* login: user01
+* password: pass01
 
 # Application documentation
 

@@ -12,6 +12,8 @@ RUN apt --quiet update && \
     apt-get -y autoremove && \
     gem install rubygems-update && \
     update_rubygems && \
+    npm install yarn && \
+    yarn add jquery &&\
     gem install bundler
 RUN bundle install
 
