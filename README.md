@@ -49,11 +49,10 @@ This application uses Marvel API (https://developer.marvel.com/docs).
 * For the search, it is made a search to /v1/public/characters passing 'name' as a query parameter. Once the app gets this response, it gets the first result id and make a request to /v1/public/comics endpoint with:
   * orderBy: onsaleDate;
   * characters: "ID of the character".
+* For the favorite feature, when the user clicks at the heart button of a comic, the ID of that comic is saved in the database at an array of favorites. 
 
 # TODO list:
 * Add front-end tests using capybara;
-* Add login to enable favorite list.
 * Add logs in all app.
 * Add paginaton.
-* Mark comics as favorite.
-* Add a error treatment
+* Add error treatment
