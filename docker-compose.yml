@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+  app:
+    build:
+      context: .
+    image: comics
+    container_name: comics-app
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails db:create && bundle exec rails db:seed && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - $PWD:/app
+    ports:
+      - 3000:3000
+    networks:
+      - internal-net
+
+networks:
+  internal-net:
+    driver: bridge

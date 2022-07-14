@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get 'sessions/new'
+  resources :comics, only: [:index, :search]
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  post 'update_favorite' => 'users#update_favorite'
+
+
+  get 'search' => 'comics#search'
+
+  get 'sign_in' => 'sessions#new'
+  post 'sign_in' => 'sessions#create'
+  root 'sessions#new'
 end

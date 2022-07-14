@@ -1,0 +1,13 @@
+<%= stylesheet_link_tag('index') %>
+<div class="header">
+  <%= image_tag('marvel_logo', class: "header-logo") %>
+  <form action="/search" method="get" accept-charset="UTF-8" class="header-search" >
+    <input id="character" name="character" type="text" />
+    <input name="commit" type="submit" value="Search" data-disable-with="Search" />
+  </form>
+</div>
+<div class="content">
+  <% if @comics %>
+    <%= render partial: 'comics/index'%>
+  <%end%>
+</div>
