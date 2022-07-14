@@ -14,13 +14,12 @@ module Favorite
     attr_reader :current_user, :comic_id
 
     def add_to_favorite
-      current_user_favorite = current_user.favorite
-
-      if current_user_favorite.nil?
-        current_user_favorite = [comic_id.to_i]
+      if current_user.favorite.nil?
+        current_user.favorite = [comic_id.to_i]
       else
-        current_user_favorite.push(comic_id.to_i)
+        current_user.favorite.push(comic_id.to_i)
       end
+
       current_user.save
     end
 

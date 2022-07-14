@@ -14,11 +14,9 @@ module Favorite
     attr_reader :current_user, :comic_id
 
     def remove_from_favorite
-      current_user_favorite = current_user.favorite
+      return nil if current_user.favorite.nil?
 
-      return nil if current_user_favorite.nil?
-
-      current_user_favorite.delete(comic_id.to_i)
+      current_user.favorite.delete(comic_id.to_i)
       current_user.save
     end
 
