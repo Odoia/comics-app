@@ -56,3 +56,10 @@ This application uses Marvel API (https://developer.marvel.com/docs).
 * Add logs in all app.
 * Add paginaton.
 * Add error treatment
+
+# Used Gems
+* pry      -> for debugging
+* rspec    -> to test backend code
+* rubocop  -> code analyzer
+* dotenv   -> loads environment variables from a .env file
+* httparty -> to consume external api
