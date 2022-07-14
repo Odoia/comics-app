@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
   resources :comics, only: [:index, :search]
 
-  post 'update_favorite' => 'comics#set_favorite'
+  post 'update_favorite' => 'users#update_favorite'
 
 
   get 'search' => 'comics#search'

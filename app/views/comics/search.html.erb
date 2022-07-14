@@ -7,21 +7,7 @@
   </form>
 </div>
 <div class="content">
-  <div class="content-grid">
-    <% @comics.each do |comic| %>
-      <div class="content-grid-item">
-
-        <%= image_tag(comic.image_url, class: 'content-grid-item-image') %>
-        <%= image_tag('heart_off', class: "content-grid-item-favorite") %>  
-        <div class="content-grid-item-info">
-          <div class="content-grid-item-text">
-            <%= comic.title %>
-          </div>
-          <div class="content-grid-item-text">
-            <%= "(#{comic.on_sale_date.year}) ##{comic.id}" %>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
+  <% if @comics %>
+    <%= render partial: 'comics/index'%>
+  <%end%>
 </div>

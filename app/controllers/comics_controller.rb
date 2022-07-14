@@ -10,12 +10,12 @@ class ComicsController < ApplicationController
       return render 'index'
     end
 
-    @comics = all_by_name
-  end
-
-  def set_favorite
-    # require 'pry'; binding.pry
-    
+    if all_by_name.nil?
+      @comics = nil
+      return render 'index'
+    else
+      @comics = all_by_name
+    end
   end
 
   private

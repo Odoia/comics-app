@@ -3,7 +3,7 @@ module Comics
 
     def call
       result = self.class.get('/comics', query_params)
-      return result unless result['code'] == 200
+      return nil unless result['code'] == 200
 
       comic_presenter(result)
     end

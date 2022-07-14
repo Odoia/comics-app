@@ -1,10 +1,13 @@
 require 'rails_helper'
 
 describe ::Comics::All  do
+  let(:user) { User.new(login: 'user1', password: 'pws') }
+  let(:current_user) { Current.user = user }
 
   context 'When get all comics' do
     context 'When pass a valid param' do
       before do
+        current_user
         allow(Comics::All).to receive(:get).and_return(JSON.parse(file_fixture('comics.json').read))
       end
 
@@ -30,7 +33,7 @@ describe ::Comics::All  do
       it 'should be return an api error' do
         result = subject.call
 
-        expect(result['code']).to eq 409
+        expect(result).to eq nil
       end
     end
   end
